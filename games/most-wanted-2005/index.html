@@ -70,7 +70,7 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--font-
 .chart-nav{z-index:90;background:rgba(8,8,12,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-subtle);padding:12px 24px 14px}
 .chart-nav .inner{max-width:1400px;margin:0 auto}
 .nav-overview-row{margin-bottom:12px}
-.nav-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.nav-columns{display:grid;grid-template-columns:auto auto;gap:16px;justify-content:start}
 .nav-col-head{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid var(--border-subtle)}
 .nav-col-buttons{display:flex;flex-direction:column;gap:2px;align-items:flex-start}
 .nav-btn{background:transparent;border:none;cursor:pointer;font-family:var(--font-body);font-size:12px;font-weight:600;color:var(--text-secondary);padding:6px 12px;border-radius:var(--radius-sm);white-space:nowrap;transition:all .15s;text-align:left;width:auto}
@@ -153,7 +153,7 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--font-
 .tune-val{font-family:var(--font-mono);font-weight:700;font-size:15px}
 
 /* ── BLACKLIST TABLE ── */
-.bl-table{width:100%;border-collapse:collapse;font-size:13px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow:hidden}
+.bl-table{width:auto;border-collapse:collapse;font-size:13px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow:hidden}
 .bl-table thead tr{background:var(--bg-elevated)}
 .bl-table th{padding:10px 14px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);text-align:left;border-bottom:1px solid var(--border-medium)}
 .bl-table tbody tr{border-bottom:1px solid var(--border-subtle);transition:background .1s}
@@ -238,11 +238,16 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--font-
   <!-- ═══ OVERVIEW ═══ -->
   <div class="panel active" id="p-overview">
 
-    <h2 style="font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-subtle)">Best Stock Cars</h2>
-    <div id="best-stock"></div>
-
-    <h2 style="font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-subtle)">Best Fully Tuned Cars</h2>
-    <div id="best-tuned"></div>
+    <div style="display:grid;grid-template-columns:auto auto;gap:32px;align-items:start;margin-bottom:0">
+      <div>
+        <h2 style="font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-subtle)">Best Stock Cars</h2>
+        <div id="best-stock"></div>
+      </div>
+      <div>
+        <h2 style="font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-subtle)">Best Fully Tuned Cars</h2>
+        <div id="best-tuned"></div>
+      </div>
+    </div>
 
     <h2 style="font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-subtle)">Best Car per Blacklist Rival</h2>
     <p style="color:var(--text-secondary);font-size:13px;margin-bottom:14px">Based on total combined stats (Top Speed + Acceleration + Handling), factoring in which cars and upgrade tiers are available before each rival.</p>
